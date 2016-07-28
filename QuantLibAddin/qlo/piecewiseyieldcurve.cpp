@@ -73,6 +73,42 @@ namespace QuantLibAddin {
 		pair_ = InterpolatedYieldCurvePair(traits, interpolator);
     }
 
+    PiecewiseYieldCurve::PiecewiseYieldCurve(
+            const boost::shared_ptr<ObjectHandler::ValueObject>& properties,
+            QuantLib::Natural nDays,
+            const QuantLib::Calendar& calendar,
+            const std::vector<boost::shared_ptr<QuantLib::RateHelper> >& qlrhs,
+            const QuantLib::DayCounter& dayCounter,
+            const std::vector<QuantLib::Handle<QuantLib::Quote> >& jumps,
+            const std::vector<QuantLib::Date>& jumpDates,
+            QuantLib::Real accuracy,
+            const std::string& traitsID,
+            const std::string& interpolatorID,
+            bool permanent)
+    : YieldTermStructure(properties, permanent)
+    {
+        libraryObject_ = ObjectHandler::Create<boost::shared_ptr<
+            QuantLib::YieldTermStructure> >()(traitsID,
+                                              interpolatorID,
+                                              nDays,
+                                              calendar,
+                                              qlrhs,
+                                              dayCounter,
+                                              jumps,
+                                              jumpDates,
+                                              accuracy,
+                                              QuantLib::MixedInterpolation::ShareRanges,
+                                              0);
+
+        // convert input strings to enumerated datatypes
+        InterpolatedYieldCurve::Traits traits =
+            ObjectHandler::Create<InterpolatedYieldCurve::Traits>()(traitsID);
+        InterpolatedYieldCurve::Interpolator interpolator =
+            ObjectHandler::Create<InterpolatedYieldCurve::Interpolator>()(interpolatorID);
+
+        pair_ = InterpolatedYieldCurvePair(traits, interpolator);
+    }
+
     // Before implementing the member functions it is necessary to provide some logic to wrap
     // the underlying QuantLib template class PiecewiseYieldCurve<Traits, Interpolator>.
     // This logic is placed in namespace Call.

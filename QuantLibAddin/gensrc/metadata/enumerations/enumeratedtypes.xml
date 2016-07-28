@@ -1709,6 +1709,21 @@
       </EnumeratedTypes>
     </EnumeratedTypeGroup>
 
+    <EnumeratedTypeGroup type='QuantLib::MixedInterpolation::Behavior'>
+      <includeFile>oh/enumerations/typefactory.hpp</includeFile>
+      <constructor>true</constructor>
+      <EnumeratedTypes>
+        <EnumeratedType>
+          <string>ShareRanges</string>
+          <value>QuantLib::MixedInterpolation::ShareRanges</value>
+        </EnumeratedType>
+        <EnumeratedType>
+          <string>SplitRanges</string>
+          <value>QuantLib::MixedInterpolation::SplitRanges</value>
+        </EnumeratedType>
+      </EnumeratedTypes>
+    </EnumeratedTypeGroup>
+
     <EnumeratedTypeGroup type='QuantLibAddin::RateHelper::DepoInclusionCriteria'>
       <includeFile>oh/enumerations/typefactory.hpp</includeFile>
       <constructor>true</constructor>
