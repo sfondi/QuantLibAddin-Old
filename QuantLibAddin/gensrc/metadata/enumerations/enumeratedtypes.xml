@@ -1878,6 +1878,14 @@
           <value>QuantLibAddin::InterpolatedYieldCurve::MixedLinearMonotonicCubicNaturalSpline</value>
         </EnumeratedType>
         <EnumeratedType>
+          <string>LogMixedLinearMonotonicCubicNaturalSpline</string>
+          <value>QuantLibAddin::InterpolatedYieldCurve::LogMixedLinearMonotonicCubicNaturalSpline</value>
+        </EnumeratedType>
+        <EnumeratedType>
+          <string>MixedLinearKrugerCubic</string>
+          <value>QuantLibAddin::InterpolatedYieldCurve::MixedLinearKrugerCubic</value>
+        </EnumeratedType>
+        <EnumeratedType>
           <string>LogMixedLinearKrugerCubic</string>
           <value>QuantLibAddin::InterpolatedYieldCurve::LogMixedLinearKrugerCubic</value>
         </EnumeratedType>

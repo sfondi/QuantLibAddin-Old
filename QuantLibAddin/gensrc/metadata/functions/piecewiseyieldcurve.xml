@@ -144,10 +144,10 @@
             <tensorRank>scalar</tensorRank>
             <description>ShareRanges to join two different interpolations over all the pillars, SplitRanges otherwise.</description>
           </Parameter>
-          <Parameter name='NRateHelper' default='1'>
+          <Parameter name='PillarsBeforeChange' exampleValue ='3'>
             <type>QuantLib::Size</type>
             <tensorRank>scalar</tensorRank>
-            <description>Number of pillar from which change the interpolation ID.</description>
+            <description>Number of pillars before the interpolation change.</description>
           </Parameter>
         </Parameters>
       </ParameterList>
